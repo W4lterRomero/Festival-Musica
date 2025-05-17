@@ -1,0 +1,24 @@
+@use 'base/variables' as *;
+
+.header{
+    background-color: $verde;
+
+    .contenido-header{
+        padding:2rem;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .navegacion-principal{
+
+            a{
+                color: $blanco;
+                margin: 0;
+            }
+        }
+    }
+    h1{
+        color: $blanco;
+        margin:0;
+    }
+}
