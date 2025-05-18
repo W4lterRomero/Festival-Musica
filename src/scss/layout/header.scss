@@ -2,6 +2,17 @@
 @use '../base/mixins.scss' as m;
 .header{
     background-color: v.$verde;
+
+    @include m.tablet{
+         &.fixed{
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: 100%;
+        box-shadow: .1rem .2rem .3rem #333;
+     }
+    }
+
     .contenido-header{
         padding:2rem;
         @include m.tablet{
@@ -34,7 +45,8 @@
     a{
         color: v.$blanco;
         font-size: 2.4rem;
-         &:hover{
+         &:hover,
+         &.active{
         color: v.$amarillo;
     }
     }

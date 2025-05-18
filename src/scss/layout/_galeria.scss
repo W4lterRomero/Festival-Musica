@@ -1,0 +1,68 @@
+@use '../base/variables' as v;
+@use '../base/mixins.scss' as m;
+
+.galeria{
+    @include m.contenedor;
+    &-imagenes{
+        @include m.grid(1,2rem);
+        @include m.telefono{
+            @include m.grid(2,2rem);
+        }
+        @include m.tablet{
+            @include m.grid(3,2rem);
+        }
+        @include m.desktop{
+            @include m.grid(4,2rem);
+        }
+
+        img{
+            height: 20rem;
+            object-fit: cover;
+        }
+    }
+}
+.modal{
+    position: fixed;
+    inset:0;
+    background-color: rbga(v.$negro,0.1);
+    display: grid;
+    place-items: center;
+    animation: fadeIn ease-in 0.5s;
+
+    &.fade-out{
+        display: grid;
+         animation: fadeOut ease-out 0.5s;
+    }
+    img{
+        max-width: 50rem;
+    }
+}
+
+@keyframes fadeIn{
+    0%{
+        background-color: red;
+
+    }
+    100%{
+        background-color: green;
+    }
+}
+.btn-cerrar{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: v.$blanco;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    cursor: pointer;
+}
+@keyframes fadeOut{
+    0%{
+        background-color: red;
+
+    }
+    100%{
+        background-color: green;
+    }
+}

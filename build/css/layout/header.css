@@ -1,6 +1,15 @@
 .header {
   background-color: #4CB8B3;
 }
+@media (min-width: 768px) {
+  .header.fixed {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-shadow: 0.1rem 0.2rem 0.3rem #333;
+  }
+}
 .header .contenido-header {
   padding: 2rem;
 }
@@ -37,7 +46,7 @@
   color: #FFFFFF;
   font-size: 2.4rem;
 }
-.navegacion-principal a:hover {
+.navegacion-principal a:hover, .navegacion-principal a.active {
   color: #fdda00;
 }
 
