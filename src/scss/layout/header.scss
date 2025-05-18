@@ -1,24 +1,55 @@
-@use 'base/variables' as *;
-
+@use '../base/variables' as v;
+@use '../base/mixins.scss' as m;
 .header{
-    background-color: $verde;
-
+    background-color: v.$verde;
     .contenido-header{
         padding:2rem;
+        @include m.tablet{
         display:flex;
         justify-content: space-between;
         align-items: center;
-        
-        .navegacion-principal{
-
-            a{
-                color: $blanco;
-                margin: 0;
-            }
         }
+        
+
     }
     h1{
-        color: $blanco;
-        margin:0;
+        color: v.$blanco;
+        text-align: center;
+        @include m.tablet{
+            text-align: left;
+            margin: 0;
+        }
     }
+}
+
+.navegacion-principal{
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+
+    @include m.tablet{
+        flex-direction: row;
+    }
+    a{
+        color: v.$blanco;
+        font-size: 2.4rem;
+         &:hover{
+        color: v.$amarillo;
+    }
+    }
+
+}
+
+@mixin contenedor{
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.header-contenedor{
+    @include contenedor();
+}
+.nav-contenedor{
+    @include contenedor();
 }
